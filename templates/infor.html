@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/infor.css">
+</head>
+<body>
+    <table border="1">
+        {% for emp, item in infor.items() %}
+            {% if emp == 'emp1' %} 
+                <tr>
+                    {% for key in item.keys() %}
+                        <th>{{key}}</th>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    {% for val in item.values() %}
+                        <th>{{val}}</th>
+                    {% endfor %}
+                </tr>
+            {% else %}
+                <tr>
+                    {% for val in item.values() %}
+                        <th>{{val}}</th>
+                    {% endfor %}
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>   
+</body>
+</html>
